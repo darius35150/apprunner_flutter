@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(title: 'App Runner 2.0'),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
