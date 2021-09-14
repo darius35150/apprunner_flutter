@@ -2,12 +2,14 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:desktop_window/desktop_window.dart';
+// import 'classes/styles/buttonstyles.dart';
+
 
 Future<void> main() async {
   runApp(const MyApp());
   DesktopWindow.setFullScreen(false);
-  await DesktopWindow.setWindowSize(const Size(585, 500));
-  await DesktopWindow.setMaxWindowSize(const Size(600, 500));
+  await DesktopWindow.setWindowSize(const Size(675, 750));
+  await DesktopWindow.setMaxWindowSize(const Size(700, 750));
 }
 
 class MyApp extends StatelessWidget {
@@ -72,84 +74,91 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
         appBar: AppBar(
-          // Here we take the value from the MyHomePage object that was created by
-          // the App.build method, and use it to set our appbar title.
           title: Text(widget.title),
         ),
-        body: Wrap(runAlignment: WrapAlignment.spaceEvenly, children: [
-          Row(children: [
-            Padding(
-                child: ElevatedButton(
-                    onPressed: () {
-                      _openApplication('Chrome');
-                    },
-                    child: const Text('Chrome')),
-                padding: const EdgeInsets.fromLTRB(25, 25, 25, 0)),
-            Padding(
-                child: ElevatedButton(
-                    onPressed: () {
-                      _openApplication('Firefox');
-                    },
-                    child: const Text('Firefox')),
-                padding: const EdgeInsets.fromLTRB(25, 25, 25, 0)),
-            Padding(
-                child: ElevatedButton(
-                    onPressed: () {
-                      _openApplication('Eclipse19');
-                    },
-                    child: const Text('Eclipse19')),
-                padding: const EdgeInsets.fromLTRB(25, 25, 25, 0)),
-            Padding(
-                child: ElevatedButton(
-                    onPressed: () {
-                      _openApplication('Eclipse20');
-                    },
-                    child: const Text('Eclipse20')),
-                padding: const EdgeInsets.fromLTRB(25, 25, 25, 0)),
-            ElevatedButton(
-                onPressed: () {
-                  _openApplication('VS Code');
-                },
-                child: const Text('VS Code')),
-            ElevatedButton(
-                onPressed: () {
-                  _openApplication('Notepad++');
-                },
-                child: const Text('Notepad++')),
-            ElevatedButton(
-                onPressed: () {
-                  _openApplication('GitHub');
-                },
-                child: const Text('GitHub')),
-            ElevatedButton(
-                onPressed: () {
-                  _openApplication('XSplit');
-                },
-                child: const Text('XSplit')),
-            ElevatedButton(
-                onPressed: () {
-                  _openApplication('Teams');
-                },
-                child: const Text('Teams')),
-            ElevatedButton(
-                onPressed: () {
-                  _openApplication('Memory Analyzer');
-                },
-                child: const Text('Memory Analyzer')),
-            ElevatedButton(
-                onPressed: () {
-                  _openApplication('Postman');
-                },
-                child: const Text('Postman'))
-          ])
-        ]));
+        body: GridView(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 4),
+            children: [
+              Padding(
+                  child: ElevatedButton(
+                      onPressed: () {
+                        _openApplication('Chrome');
+                      },
+                      child: const Text('Chrome')),
+                  padding: const EdgeInsets.fromLTRB(15, 65, 15, 25)),
+              Padding(
+                  child: ElevatedButton(
+                      onPressed: () {
+                        _openApplication('Firefox');
+                      },
+                      child: const Text('Firefox')),
+                  padding: const EdgeInsets.fromLTRB(15, 65, 15, 25)),
+              Padding(
+                  child: ElevatedButton(
+                      onPressed: () {
+                        _openApplication('Eclipse19');
+                      },
+                      child: const Text('Eclipse19')),
+                  padding: const EdgeInsets.fromLTRB(15, 65, 15, 25)),
+              Padding(
+                  child: ElevatedButton(
+                      onPressed: () {
+                        _openApplication('Eclipse20');
+                      },
+                      child: const Text('Eclipse20')),
+                  padding: const EdgeInsets.fromLTRB(15, 65, 15, 25)),
+              Padding(
+                  child: ElevatedButton(
+                      onPressed: () {
+                        _openApplication('VS Code');
+                      },
+                      child: const Text('VS Code')),
+                  padding: const EdgeInsets.fromLTRB(15, 65, 15, 25)),
+              Padding(
+                  child: ElevatedButton(
+                      onPressed: () {
+                        _openApplication('Notepad++');
+                      },
+                      child: const Text('Notepad++')),
+                  padding: const EdgeInsets.fromLTRB(15, 65, 15, 25)),
+              Padding(
+                  child: ElevatedButton(
+                      onPressed: () {
+                        _openApplication('GitHub');
+                      },
+                      child: const Text('GitHub')),
+                  padding: const EdgeInsets.fromLTRB(15, 65, 15, 25)),
+              Padding(
+                  child: ElevatedButton(
+                      onPressed: () {
+                        _openApplication('XSplit');
+                      },
+                      child: const Text('XSplit')),
+                  padding: const EdgeInsets.fromLTRB(15, 65, 15, 25)),
+              Padding(
+                  child: ElevatedButton(
+                      onPressed: () {
+                        _openApplication('Teams');
+                      },
+                      child: const Text('Teams')),
+                  padding: const EdgeInsets.fromLTRB(15, 65, 15, 25)),
+              Padding(
+                  child: ElevatedButton(
+                      onPressed: () {
+                        _openApplication('Memory Analyzer');
+                      },
+                      child: const Text('Memory Analyzer')),
+                  padding: const EdgeInsets.fromLTRB(15, 65, 15, 25)),
+              Padding(
+                  child: ElevatedButton(
+                      onPressed: () {
+                        _openApplication('Postman');
+                      },
+                      child: const Text('Postman')),
+                  padding: const EdgeInsets.fromLTRB(15, 65, 15, 25)),
+            ]));
   }
 }
