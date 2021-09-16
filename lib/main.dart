@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:desktop_window/desktop_window.dart';
 // import 'classes/styles/buttonstyles.dart';
 
-
 Future<void> main() async {
   runApp(const MyApp());
   DesktopWindow.setFullScreen(false);
@@ -68,6 +67,12 @@ class _MyHomePageState extends State<MyHomePage> {
           Process.run(
               'C:/Users/dariush/AppData/Local/GitHubDesktop/GitHubDesktop.exe',
               []);
+          break;
+        case 'Restart':
+          Process.run('shutdown -r -t 0 -f', [], runInShell: true);
+          break;
+        case 'Shutdown':
+          Process.run('shutdown -t 0 -f', [], runInShell: true);
           break;
       }
     });
@@ -160,6 +165,18 @@ class _MyHomePageState extends State<MyHomePage> {
                       },
                       child: const Text('Postman')),
                   padding: const EdgeInsets.fromLTRB(15, 65, 15, 25)),
-            ]));
+            ]),
+        persistentFooterButtons: <Widget>[
+          TextButton(
+              child: const Text("Restart"),
+              onPressed: () {
+                _openApplication('Restart');
+              }),
+          TextButton(
+              onPressed: () {
+                _openApplication('Shutdown');
+              },
+              child: const Text("Shutdown"))
+        ]);
   }
 }
