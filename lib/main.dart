@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Process.run('shutdown -r -t 0 -f', [], runInShell: true);
           break;
         case 'Shutdown':
-          Process.run('shutdown -t 0 -f', [], runInShell: true);
+          Process.run('shutdown -s -t 0 -f', [], runInShell: true);
           break;
       }
     });
