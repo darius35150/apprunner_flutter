@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:desktop_window/desktop_window.dart';
 import 'classes/openprograms.dart';
+import 'package:msix/msix.dart';
 
 Future<void> main() async {
   runApp(const MyApp());
@@ -143,7 +144,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 _openApplication('Shutdown');
               },
               child: const Text("Shutdown"))
-        ]
-    );
+        ]);
   }
 }
