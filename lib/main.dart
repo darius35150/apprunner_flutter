@@ -68,6 +68,11 @@ class _MyHomePageState extends State<MyHomePage> {
               'C:/Users/dariush/AppData/Local/GitHubDesktop/GitHubDesktop.exe',
               []);
           break;
+        case 'Teams':
+          Process.run(
+              'C:/Users/dariush/AppData/Local/Microsoft/Teams/Update.exe --processStart "Teams.exe"',
+              []);
+          break;
         case 'Restart':
           Process.run('shutdown -r -t 0 -f', [], runInShell: true);
           break;
