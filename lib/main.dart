@@ -7,8 +7,8 @@ Future<void> main() async {
   runApp(const MyApp());
 
   DesktopWindow.setFullScreen(false);
-  await DesktopWindow.setWindowSize(const Size(675, 750));
-  await DesktopWindow.setMaxWindowSize(const Size(700, 750));
+  await DesktopWindow.setWindowSize(const Size(710, 750));
+  await DesktopWindow.setMaxWindowSize(const Size(710, 750));
 }
 
 class MyApp extends StatelessWidget {
