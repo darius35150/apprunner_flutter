@@ -40,7 +40,17 @@ class OpenPrograms {
         break;
       case 'XSplit':
         Process.run(
-            'C:\Program Files (x86)\SplitmediaLabs\XSplit Broadcaster\x64\XSplit.Core.exe',
+            'C:/Program Files (x86)/SplitmediaLabs/XSplit Broadcaster/x64/XSplit.Core.exe',
+            [], runInShell: true);
+        break;
+      case 'Memory Analyzer':
+        Process.run(
+            'C:/Memory Analyzer/mat/MemoryAnalyzer.exe',
+            []);
+        break;
+      case 'Postman':
+        Process.run(
+            'C:/Users/dariush/AppData/Local/Postman/Postman.exe',
             []);
         break;
       case 'Restart':
