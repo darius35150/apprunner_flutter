@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:desktop_window/desktop_window.dart';
 import 'classes/openprograms.dart';
-import 'package:msix/msix.dart';
+// import 'package:msix/msix.dart';
 
 Future<void> main() async {
   runApp(const MyApp());
@@ -55,13 +55,16 @@ class _MyHomePageState extends State<MyHomePage> {
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 4),
             children: [
-              Padding(
-                  child: ElevatedButton(
-                      onPressed: () {
-                        _openApplication('Chrome');
-                      },
-                      child: const Text('Chrome')),
-                  padding: const EdgeInsets.fromLTRB(15, 65, 15, 25)),
+              SizedBox(
+                  width: 50,
+                  height: 50,
+                  child: Padding(
+                      child: ElevatedButton(
+                          onPressed: () {
+                            _openApplication('Chrome');
+                          },
+                          child: const Text('Chrome')),
+                      padding: const EdgeInsets.fromLTRB(15, 65, 15, 25))),
               Padding(
                   child: ElevatedButton(
                       onPressed: () {
